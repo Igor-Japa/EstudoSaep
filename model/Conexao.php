@@ -2,8 +2,6 @@
 
 /**
  * Classe para gerenciar a conexão com o banco de dados.
- * 
- * @author alexandre.paula
  */
 class Conexao {
     private static $instance;

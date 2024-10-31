@@ -19,7 +19,7 @@ class usuario {
             
             return 'Usuario cadastrado com sucesso';
             
-        } catch (Exception $ex) {
+        } catch (PDOException $ex) {
             if($ex->errorInfo[1] == 1062)
             {
                 return 'Usuario já cadastrado';
@@ -109,6 +109,5 @@ class usuario {
             return false;
         }
     }
- 
-    //put your code here
+
 }
