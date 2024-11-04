@@ -31,9 +31,9 @@
         
         //echo $l->addItem('teste@teste.com', 2);
         
-        echo $l->removeItem(1,1);
+        //echo $l->removeItem(1,1);
         
-        
+        print_r($l->getItens(teste@teste));
         echo 'aqui';
         
         //var_dump(Conexao::getConexao());

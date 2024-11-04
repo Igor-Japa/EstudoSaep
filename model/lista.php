@@ -116,16 +116,48 @@ class lista {
             } else{
                 return 'Nenhum item removido';
             }
-        } catch (Exception $ex) {
+        } catch (PDOException $ex) {
             return 'Erro ao excluir';
-            teste
-            
-
         }
-        
+    }
+            
+        public function getItens($lista){
+            try{
+                $sql = "select produto.codigo, produto.nome from produto".
+                "inner join item on item.produto_codigo=produto.codigo".
+                "INNER JOIN lista on lista.codigo=item.lista_codigo".
+                "where lista.codigo=?";
+                $stmt = Conexao::getConexao()->prepare($sql);
+                $stmt->bindValue(1,$lista);
+                $stmt->execute();
+                if($stmt->rowCount()>0){
+                    $result=$stmt->fetchALL(PDO::FETCH_BOTH);
+                    return $result;
+   
+                }
+                catch (PDOException $ex){
+                return false;}
+            }
     }   
-        
-        
+        public function getItensUsuario($email)
+{
+    try{
+        $sql= "select produto.codigo, produto.nome, lista.descricao from produto".
+        "INNER JOIN ON item.produto_codigo=produto_codigo".
+        "INNER JOIN ON lista.codigo=item.lista_codigo".
+        "where usuario.email=?";
+        $stmt = Conexao::getConexao()->prepare($sql);
+                $stmt->bindValue(1,$lista);
+                $stmt->execute();
+                if($stmt->rowCount()>0){
+                    $result=$stmt->fetchALL(PDO::FETCH_BOTH);
+                    return $result;
+   
+                }
+                catch (PDOException $ex){
+                return false;}
+    }
+}        
         
         
     
