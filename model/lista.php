@@ -122,7 +122,8 @@ class lista {
     }
             
         public function getItens($lista){
-            try{
+            try
+            {
                 $sql = "select produto.codigo, produto.nome from produto".
                 "inner join item on item.produto_codigo=produto.codigo".
                 "INNER JOIN lista on lista.codigo=item.lista_codigo".
@@ -130,14 +131,19 @@ class lista {
                 $stmt = Conexao::getConexao()->prepare($sql);
                 $stmt->bindValue(1,$lista);
                 $stmt->execute();
-                if($stmt->rowCount()>0){
+                
+                if($stmt->rowCount()>0)
+                {
                     $result=$stmt->fetchALL(PDO::FETCH_BOTH);
                     return $result;
    
                 }
-                catch (PDOException $ex){
-                return false;}
             }
+                catch (PDOException $ex)
+                {
+                    return false;
+                }              
+            
     }   
         public function getItensUsuario($email)
 {
@@ -154,9 +160,10 @@ class lista {
                     return $result;
    
                 }
+            }
                 catch (PDOException $ex){
                 return false;}
-    }
+    
 }        
         
         

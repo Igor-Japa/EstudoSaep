@@ -2,7 +2,7 @@
 
 class usuario {
     
-    public function addUsuario($email,$nome,$senha) {
+    public function addUsuario($email,$nome, $senha) {
         
         try{
             $sql = "Insert into usuario Values (?,?,?,?,?,?)";

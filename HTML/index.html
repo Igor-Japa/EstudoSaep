@@ -1,28 +1,14 @@
-<?php
+<!DOCTYPE html>
 
-include './model/Conexao.php';
-include './model/lista.php';
-include './model/produto.php';
-include './model/usuario.php';
-include './control/controller.php';
-
-$c = new Controller();
-
-$c->index();
-
-if($c->cadastroIndex) echo $c->cadastroIndex;
-if($c->LoginIndex) echo $c->loginIndex;
-
-?>
-
-<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-      <title></title>
-  </head>
-  <body>
-  <div class="container">
+    <head>
+        <title>Pagina Inicial</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+       <!--  <div class="container">
         <header class="row clearfix">
             Logomarca
         </header>
@@ -30,26 +16,10 @@ if($c->LoginIndex) echo $c->loginIndex;
         <nav class="row clearfix">
             Menu
         </nav>
-        <div>
-            <hr>
-            <h2><strong>Produtos para sua lista</strong></h2>
-        </div>
+            <div class="row clearfix">
         
-        <article class="row clearfix">
-            <img src="bootstrap/img/produtos/pc.jpg" alt="foto">
-            <h2>Titulo do produto</h2>
-            <p>Descricao do Produto</p>
-            <p><a href="#">Link do Produto</a></p>
-            <p></p>
-        
-            <form method="POST">
-                <input type="hidden" name="codigo" value="|">
-                <button class="btn btn-default btn-lg" name="add"> Adicionar a lista</button>
-            </form>
-        </article>
-        </div>
-
-    <!--  <form method="POST">
+        <section class="col-md-6">
+            <form method="post">
                 <h2>
                     <strong>Efetue o login</strong>
                 </h2>
@@ -70,9 +40,8 @@ if($c->LoginIndex) echo $c->loginIndex;
                 </h2>
                 <hr>
                 <p><input type="email" name="email" placeholder="Digite seu email" required/></p>
-                <p><input type="nome" name="nome" placeholder="Digite seu nome" required/></p>
                 <p><input type="password" name="senha" placeholder="Digite sua senha" required/></p>
-                <p><button name="cadastrar" type="submit">Cadastrar</button></p>
+                <p><button name="login" type="submit">Cadastrar</button></p>
              </form>
         </section>
             </div>
@@ -85,7 +54,6 @@ if($c->LoginIndex) echo $c->loginIndex;
             <div>
             <div>
                 <img alt="tutorial_1" src="bootstrap/img/index/tutorial_1.jpg">
-            </div>
             <div>
                 <p>
                    Texto Explicativo 
